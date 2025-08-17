@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from database import engine,Base
 import models
-from Routes import UserRoute
+from Routes import UserRoute,UploadResources
 
 app=FastAPI()
 
@@ -18,3 +18,4 @@ async def root():
 
 
 app.include_router(UserRoute.router)
+app.include_router(UploadResources.router)
